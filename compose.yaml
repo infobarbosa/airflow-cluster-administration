@@ -1,0 +1,20 @@
+#
+# Execução local do laboratório (Apêndice D do README): um container com o
+# code-server e um cluster Airflow 3 (CeleryExecutor, Redis, 2 schedulers, 2 workers).
+#
+#   docker compose up -d
+#
+# Depois, abra http://localhost:8080 (IDE), http://localhost:8081 (Airflow, admin/admin)
+# e http://localhost:5555 (Flower) no navegador.
+#
+name: airflow-cluster-administration
+services:
+  airflow-cluster-lab:
+    container_name: airflow-cluster-lab
+    image: ghcr.io/infobarbosa/airflow-cluster-lab-docker-image:latest
+    ports:
+      - "8080:8080"   # IDE (code-server)
+      - "8081:8081"   # Airflow (UI e API)
+      - "5555:5555"   # Flower
+    # Tempo para workers e schedulers encerrarem de forma limpa
+    stop_grace_period: 60s
