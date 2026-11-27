@@ -193,7 +193,7 @@ curl -sS https://raw.githubusercontent.com/infobarbosa/airflow-cluster-administr
 Output esperado:
 ```
 Memória da Máquina
-  ✓ Memória RAM detectada: 31431 MB
+  ✓ Memória RAM detectada: 7816 MB
 
 Ferramentas
   ✓ airflow
