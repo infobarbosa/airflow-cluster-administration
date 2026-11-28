@@ -2,7 +2,7 @@
 #
 # Verificacao do ambiente do laboratorio airflow-cluster-administration.
 # Uso (no terminal do code-server):
-#   curl -sS https://raw.githubusercontent.com/infobarbosa/airflow-cluster-administration/main/scripts/check.sh | bash
+#   curl -sS https://raw.githubusercontent.com/labzinho/airflow-cluster-administration/main/scripts/check.sh | bash
 #
 
 GREEN='\033[0;32m'

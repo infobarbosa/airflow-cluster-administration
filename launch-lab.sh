@@ -2,7 +2,7 @@
 # ==============================================================================
 # Script de Provisionamento Automático - Laboratório Airflow Cluster Administration
 # Autor: Prof. Barbosa
-# Repositório: https://github.com/infobarbosa/airflow-cluster-administration
+# Repositório: https://github.com/labzinho/airflow-cluster-administration
 # ==============================================================================
 
 set -euo pipefail
@@ -211,7 +211,7 @@ docker run -d \
   -p 8081:8081 \
   -p 5555:5555 \
   -v /home/ubuntu/workspace:/home/barbosa/project \
-  ghcr.io/infobarbosa/airflow-cluster-lab-docker-image:__IMAGE_TAG__
+  ghcr.io/labzinho/airflow-cluster-lab-docker-image:__IMAGE_TAG__
 '
 USER_DATA_SCRIPT="${USER_DATA_SCRIPT//__IMAGE_TAG__/${IMAGE_TAG}}"
 

@@ -3,7 +3,7 @@
 Author: Prof. Barbosa<br>
 Github: [infobarbosa](https://github.com/infobarbosa)
 
-No laboratório [airflow-orchestration-demo](https://github.com/infobarbosa/airflow-orchestration-demo), o foco é **usar** o Airflow: escrever DAGs, agendar, reprocessar, encadear pipelines. Este laboratório olha para o outro lado, o de quem **opera** a plataforma: como os componentes se dividem, como as tasks chegam aos workers, o que limita a concorrência e, principalmente, **o que acontece quando cada peça cai**.
+No laboratório [airflow-orchestration-demo](https://github.com/labzinho/airflow-orchestration-demo), o foco é **usar** o Airflow: escrever DAGs, agendar, reprocessar, encadear pipelines. Este laboratório olha para o outro lado, o de quem **opera** a plataforma: como os componentes se dividem, como as tasks chegam aos workers, o que limita a concorrência e, principalmente, **o que acontece quando cada peça cai**.
 
 O ambiente é um Airflow 3 em cluster de verdade: **CeleryExecutor** com broker **Redis**, **dois schedulers** em alta disponibilidade, **dois workers** com filas diferentes, DAG Processor, Triggerer, API Server, Flower e o banco de metadados no **PostgreSQL**. Cada componente é um processo que você pode parar, matar e religar.
 
@@ -29,7 +29,7 @@ Os comandos são copy-paste no terminal do laboratório, na ordem em que aparece
 
 - Acesso ao **AWS Academy** (o ambiente é uma instância EC2 de **8 GB de RAM** criada pelo script `launch-lab.sh`, logo a seguir).
 - Um navegador. Nada precisa ser instalado.
-- Recomendado: ter feito o laboratório [airflow-orchestration-demo](https://github.com/infobarbosa/airflow-orchestration-demo) ou conhecer os conceitos de DAG, task, DAG run e task instance.
+- Recomendado: ter feito o laboratório [airflow-orchestration-demo](https://github.com/labzinho/airflow-orchestration-demo) ou conhecer os conceitos de DAG, task, DAG run e task instance.
 
 Fora da aula, o mesmo ambiente roda em qualquer máquina com **Docker** — veja o [Apêndice D](#d-execução-local).
 
@@ -97,7 +97,7 @@ O laboratório roda em uma instância **AWS EC2 com 8 GB de RAM** (`t3.large`) c
 No terminal do CloudShell, execute:
 
 ```sh
-curl -sS https://raw.githubusercontent.com/infobarbosa/airflow-cluster-administration/main/launch-lab.sh | bash
+curl -sS https://raw.githubusercontent.com/labzinho/airflow-cluster-administration/main/launch-lab.sh | bash
 
 ```
 
@@ -186,7 +186,7 @@ Se o arquivo ainda não tiver chegado em `Ambiente pronto.`, aguarde alguns segu
 
 ```sh
 # 0.2
-curl -sS https://raw.githubusercontent.com/infobarbosa/airflow-cluster-administration/main/scripts/check.sh | bash
+curl -sS https://raw.githubusercontent.com/labzinho/airflow-cluster-administration/main/scripts/check.sh | bash
 
 ```
 
@@ -1150,7 +1150,7 @@ Ao fim de cada aula, pare a instância: no Console AWS (`us-east-1`), **EC2** > 
 Rode o diagnóstico completo do ambiente:
 
 ```sh
-curl -sS https://raw.githubusercontent.com/infobarbosa/airflow-cluster-administration/main/scripts/check.sh | bash
+curl -sS https://raw.githubusercontent.com/labzinho/airflow-cluster-administration/main/scripts/check.sh | bash
 
 ```
 
@@ -1174,7 +1174,7 @@ Para executar localmente no Docker (cerca de 4 GB de RAM livres), em `amd64` ou 
 
 ```sh
 mkdir airflow-cluster-administration && cd airflow-cluster-administration
-curl -sSO https://raw.githubusercontent.com/infobarbosa/airflow-cluster-administration/main/compose.yaml
+curl -sSO https://raw.githubusercontent.com/labzinho/airflow-cluster-administration/main/compose.yaml
 docker compose up -d
 
 ```
@@ -1182,7 +1182,7 @@ docker compose up -d
 Ou diretamente:
 
 ```sh
-docker run -d --name airflow-cluster-lab -p 8080:8080 -p 8081:8081 -p 5555:5555 --stop-timeout 60 ghcr.io/infobarbosa/airflow-cluster-lab-docker-image:latest
+docker run -d --name airflow-cluster-lab -p 8080:8080 -p 8081:8081 -p 5555:5555 --stop-timeout 60 ghcr.io/labzinho/airflow-cluster-lab-docker-image:latest
 
 ```
 

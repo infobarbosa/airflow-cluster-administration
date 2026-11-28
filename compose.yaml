@@ -11,7 +11,7 @@ name: airflow-cluster-administration
 services:
   airflow-cluster-lab:
     container_name: airflow-cluster-lab
-    image: ghcr.io/infobarbosa/airflow-cluster-lab-docker-image:latest
+    image: ghcr.io/labzinho/airflow-cluster-lab-docker-image:latest
     ports:
       - "8080:8080"   # IDE (code-server)
       - "8081:8081"   # Airflow (UI e API)
